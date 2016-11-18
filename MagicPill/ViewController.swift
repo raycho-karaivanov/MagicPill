@@ -42,26 +42,61 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
 
-
-    @IBAction func stateBtnPressed(_ sender: Any) {
-        
+    func hideLow() {
         statePicker.isHidden = false
         zipLbl.isHidden = true
         zipTxt.isHidden = true
         buyNowBtn.isHidden = true
     }
     
+    func hideAll() {
+        statePicker.isHidden = true
+        statePickerBtn.isHidden = true
+        buyNowBtn.isHidden = true
+        pillPic.isHidden = true
+        magicLbl.isHidden = true
+        priceLbl.isHidden = true
+        lineImg.isHidden = true
+        nameLbl.isHidden = true
+        nameTxt.isHidden = true
+        addressLbl.isHidden = true
+        addressTxt.isHidden = true
+        cityLbl.isHidden = true
+        cityTxt.isHidden = true
+        countryLbl.isHidden = true
+        countryTxt.isHidden = true
+        zipLbl.isHidden = true
+        zipTxt.isHidden = true
+    }
+
+    @IBAction func stateBtnPressed(_ sender: Any) {
+        
+        hideLow()
+    }
+    
+    
     @IBAction func buyNowBtnPressed(_ sender: Any) {
+        
+        if nameTxt.text != "" {
+            if addressTxt.text != "" {
+                if cityTxt.text != "" {
+                    if countryTxt.text != ""{
+                        if zipTxt.text != "" {
+                            hideAll()
+                            successImg.isHidden = false
+                        }
+                    }
+                }
+            }
+        }
+        
         
         
     }
    
     @IBAction func countryTxtPressed(_ sender: Any) {
-        statePicker.isHidden = false
-       // countryTxt.isUserInteractionEnabled = false
-        zipLbl.isHidden = true
-        zipTxt.isHidden = true
-        buyNowBtn.isHidden = true
+       
+        hideLow()
     }
     
 

@@ -238,7 +238,7 @@
                         <outlet property="countryTxt" destination="x0B-JG-FHt" id="iig-ow-CiR"/>
                         <outlet property="lineImg" destination="Q76-d0-pb4" id="Tga-kF-UBX"/>
                         <outlet property="magicLbl" destination="K6Q-bP-JzD" id="caS-By-ayN"/>
-                        <outlet property="nameLbl" destination="csq-Kh-IPE" id="E1o-oj-5pB"/>
+                        <outlet property="nameLbl" destination="csq-Kh-IPE" id="imH-1l-Ldn"/>
                         <outlet property="nameTxt" destination="Yi4-YN-yv3" id="Uh9-Pu-OLH"/>
                         <outlet property="pillPic" destination="aN4-Q8-pKe" id="fCm-6r-6NJ"/>
                         <outlet property="priceLbl" destination="dJS-og-exu" id="IUx-0d-8nV"/>
