@@ -13,7 +13,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     
     @IBOutlet weak var statePicker: UIPickerView!
-    @IBOutlet weak var statePickerBtn: UIButton!
     @IBOutlet weak var buyNowBtn: UIButton!
     @IBOutlet weak var pillPic: UIImageView!
     @IBOutlet weak var magicLbl: UILabel!
@@ -44,6 +43,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     func hideLow() {
         statePicker.isHidden = false
+        countryTxt.isUserInteractionEnabled = false
         zipLbl.isHidden = true
         zipTxt.isHidden = true
         buyNowBtn.isHidden = true
@@ -51,7 +51,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func hideAll() {
         statePicker.isHidden = true
-        statePickerBtn.isHidden = true
         buyNowBtn.isHidden = true
         pillPic.isHidden = true
         magicLbl.isHidden = true
@@ -69,10 +68,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         zipTxt.isHidden = true
     }
 
-    @IBAction func stateBtnPressed(_ sender: Any) {
-        
-        hideLow()
-    }
     
     
     @IBAction func buyNowBtnPressed(_ sender: Any) {
@@ -117,13 +112,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        statePickerBtn.setTitle(states[row], for: UIControlState.normal)
+       
         countryTxt.text = states[row]
-       // countryTxt.isUserInteractionEnabled = false
         statePicker.isHidden = true
         zipLbl.isHidden = false
         zipTxt.isHidden = false
         buyNowBtn.isHidden = false
+        countryTxt.isUserInteractionEnabled = true
+        zipTxt.becomeFirstResponder()
         
     }
 }
